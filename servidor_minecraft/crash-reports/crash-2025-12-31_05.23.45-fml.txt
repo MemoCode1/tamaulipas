@@ -1,0 +1,255 @@
+---- Minecraft Crash Report ----
+// Don't be sad. I'll do better next time, I promise!
+
+Time: 2025-12-31 05:23:45
+Description: Mod loading error has occurred
+
+java.lang.Exception: Mod Loading has failed
+	at net.minecraftforge.logging.CrashReportExtender.dumpModLoadingCrashReport(CrashReportExtender.java:60) ~[forge-1.20.1-47.3.7-universal.jar%23392!/:?] {re:classloading}
+	at net.minecraftforge.server.loading.ServerModLoader.load(ServerModLoader.java:37) ~[forge-1.20.1-47.3.7-universal.jar%23392!/:?] {re:classloading}
+	at net.minecraft.server.Main.main(Main.java:125) ~[server-1.20.1-20230612.114412-srg.jar%23387!/:?] {re:classloading}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:111) ~[fmlloader-1.20.1-47.3.7.jar%2367!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.serverService(CommonLaunchHandler.java:103) ~[fmlloader-1.20.1-47.3.7.jar%2367!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonServerLaunchHandler.lambda$makeService$0(CommonServerLaunchHandler.java:27) ~[fmlloader-1.20.1-47.3.7.jar%2367!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar%2353!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar%2353!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar%2353!/:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar%2353!/:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar%2353!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar%2353!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar%2353!/:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: main
+Suspected Mod: 
+	Tinkers' Thinking (tinkers_thinking), Version: 0.1.6.5
+		Issue tracker URL: https://github.com/CreepingCreeper/Tinkers-Thinking/issues
+		at TRANSFORMER/tinkers_thinking@0.1.6.5/com.creeping_creeper.tinkers_thinking.TinkersThinking.commonSetup(TinkersThinking.java:71)
+Stacktrace:
+	at com.creeping_creeper.tinkers_thinking.TinkersThinking.commonSetup(TinkersThinking.java:71) ~[Tinkers-Thinking-0.1.6.5.jar%23360!/:?] {re:classloading}
+-- MOD tinkers_thinking --
+Details:
+	Mod File: /workspaces/tamaulipas/servidor_minecraft/mods/Tinkers-Thinking-0.1.6.5.jar
+	Failure message: Tinkers' Thinking (tinkers_thinking) encountered an error during the common_setup event phase
+		java.lang.NoSuchMethodError: 'void com.creeping_creeper.tinkers_thinking.common.client.ModSlots.init()'
+	Mod Version: 0.1.6.5
+	Mod Issue URL: https://github.com/CreepingCreeper/Tinkers-Thinking/issues
+	Exception message: java.lang.NoSuchMethodError: 'void com.creeping_creeper.tinkers_thinking.common.client.ModSlots.init()'
+Stacktrace:
+	at com.creeping_creeper.tinkers_thinking.TinkersThinking.commonSetup(TinkersThinking.java:71) ~[Tinkers-Thinking-0.1.6.5.jar%23360!/:?] {re:classloading}
+	at net.minecraftforge.eventbus.EventBus.doCastFilter(EventBus.java:260) ~[eventbus-6.0.5.jar%2350!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.lambda$addListener$11(EventBus.java:252) ~[eventbus-6.0.5.jar%2350!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:315) ~[eventbus-6.0.5.jar%2350!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:296) ~[eventbus-6.0.5.jar%2350!/:?] {}
+	at net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:114) ~[javafmllanguage-1.20.1-47.3.7.jar%23389!/:?] {}
+	at net.minecraftforge.fml.ModContainer.lambda$buildTransitionHandler$4(ModContainer.java:125) ~[fmlcore-1.20.1-47.3.7.jar%23388!/:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?] {}
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?] {re:mixin,re:computing_frames}
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?] {re:mixin,re:computing_frames}
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?] {re:mixin}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Linux (amd64) version 6.8.0-1030-azure
+	Java Version: 17.0.17, Ubuntu
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Ubuntu
+	Memory: 1404054528 bytes (1339 MiB) / 2466250752 bytes (2352 MiB) up to 12884901888 bytes (12288 MiB)
+	CPUs: 4
+	JVM Flags: 2 total; -Xms2G -Xmx12G
+	ModLauncher: 10.0.9+10.0.9+main.dcd20f30
+	ModLauncher launch target: forgeserver
+	ModLauncher naming: srg
+	ModLauncher services: 
+		mixin-0.8.5.jar mixin PLUGINSERVICE 
+		eventbus-6.0.5.jar eventbus PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.7.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.7.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.7.jar runtime_enum_extender PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.7.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.0.4.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.7.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.9.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		lowcodefml@null
+		javafml@null
+	Mod List: 
+		saturn-mc1.20.1-0.1.3.jar                         |Saturn                        |saturn                        |0.1.3               |SIDED_SETU|Manifest: NOSIGNATURE
+		YungsBetterDungeons-1.20-Forge-4.0.4.jar          |YUNG's Better Dungeons        |betterdungeons                |1.20-Forge-4.0.4    |SIDED_SETU|Manifest: NOSIGNATURE
+		fabric-renderer-api-v1-3.2.2+cf68abbe77.jar       |Fabric Renderer API (v1)      |fabric_renderer_api_v1        |3.2.2+cf68abbe77    |SIDED_SETU|Manifest: NOSIGNATURE
+		supermartijn642configlib-1.1.8-forge-mc1.20.jar   |SuperMartijn642's Config Libra|supermartijn642configlib      |1.1.8               |SIDED_SETU|Manifest: NOSIGNATURE
+		geckolib-forge-1.20.1-4.8.2.jar                   |GeckoLib 4                    |geckolib                      |4.8.2               |SIDED_SETU|Manifest: NOSIGNATURE
+		beautify-2.0.2.jar                                |Beautify                      |beautify                      |2.0.2               |SIDED_SETU|Manifest: NOSIGNATURE
+		player-animation-lib-forge-1.0.2-rc1+1.20.jar     |Player Animator               |playeranimator                |1.0.2-rc1+1.20      |SIDED_SETU|Manifest: NOSIGNATURE
+		IllagerInvasion-v8.0.7-1.20.1-Forge.jar           |Illager Invasion              |illagerinvasion               |8.0.7               |SIDED_SETU|Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		duclib-1.20-1.1.4.jar                             |DucLib                        |duclib                        |1.1.4               |SIDED_SETU|Manifest: NOSIGNATURE
+		naturalist-5.0pre2+forge-1.20.1.jar               |Naturalist                    |naturalist                    |5.0pre2             |SIDED_SETU|Manifest: NOSIGNATURE
+		YungsBetterOceanMonuments-1.20-Forge-3.0.4.jar    |YUNG's Better Ocean Monuments |betteroceanmonuments          |1.20-Forge-3.0.4    |SIDED_SETU|Manifest: NOSIGNATURE
+		dynamiclights-1.20.1.2.jar                        |Dynamic Lights                |dynamiclights                 |1.20.1.2            |SIDED_SETU|Manifest: NOSIGNATURE
+		valhelsia_furniture-forge-1.20.1-1.1.3.jar        |Valhelsia Furniture           |valhelsia_furniture           |1.1.3               |SIDED_SETU|Manifest: NOSIGNATURE
+		Incendium_1.20.x_v5.3.5.jar                       |Incendium                     |incendium                     |5.3.5               |SIDED_SETU|Manifest: NOSIGNATURE
+		structureessentials-1.20.1-4.8.jar                |Structure Essentials mod      |structureessentials           |1.20.1-4.8          |SIDED_SETU|Manifest: NOSIGNATURE
+		XaerosWorldMap_1.39.12_Forge_1.20.jar             |Xaero's World Map             |xaeroworldmap                 |1.39.12             |SIDED_SETU|Manifest: NOSIGNATURE
+		Placebo-1.20.1-8.6.3.jar                          |Placebo                       |placebo                       |8.6.3               |SIDED_SETU|Manifest: NOSIGNATURE
+		modernfix-forge-5.25.2+mc1.20.1.jar               |ModernFix                     |modernfix                     |5.25.2+mc1.20.1     |SIDED_SETU|Manifest: NOSIGNATURE
+		citadel-2.6.2-1.20.1.jar                          |Citadel                       |citadel                       |2.6.2               |SIDED_SETU|Manifest: NOSIGNATURE
+		alexsmobs-1.22.9.jar                              |Alex's Mobs                   |alexsmobs                     |1.22.9              |SIDED_SETU|Manifest: NOSIGNATURE
+		zombieawareness-1.20.1-1.13.1.jar                 |Zombie Awareness              |zombieawareness               |1.20.1-1.13.1       |SIDED_SETU|Manifest: NOSIGNATURE
+		YungsApi-1.20-Forge-4.0.6.jar                     |YUNG's API                    |yungsapi                      |1.20-Forge-4.0.6    |SIDED_SETU|Manifest: NOSIGNATURE
+		void_lib-1.1.6.jar                                |Void Lib                      |void_lib                      |1.1.6               |SIDED_SETU|Manifest: NOSIGNATURE
+		guardvillagers-1.20.1-1.6.15.jar                  |Guard Villagers               |guardvillagers                |1.20.1-1.6.15       |SIDED_SETU|Manifest: NOSIGNATURE
+		u_team_core-forge-1.20.1-5.1.4.382.jar            |U Team Core                   |uteamcore                     |5.1.4.382           |SIDED_SETU|Manifest: f4:a6:0b:ee:cb:8a:1a:ea:9f:9d:45:91:8f:8b:b3:ae:26:f3:bf:05:86:1d:90:9e:f6:32:2a:1a:ed:1d:ce:b0
+		fastconfigapi-2.1.2.jar                           |Fast Config API               |fastconfigapi                 |2.1.2               |SIDED_SETU|Manifest: NOSIGNATURE
+		takesapillage-1.0.3-1.20.1.jar                    |It Takes A Pillage            |takesapillage                 |1.0.3               |SIDED_SETU|Manifest: NOSIGNATURE
+		cave_dweller-1.20.1-1.6.4.jar                     |cave_dweller                  |cave_dweller                  |1.6.4               |SIDED_SETU|Manifest: NOSIGNATURE
+		The-Hordes-1.20.1-1.5.4c.jar                      |The Hordes                    |hordes                        |1.5.4c              |SIDED_SETU|Manifest: NOSIGNATURE
+		SnowRealMagic-1.20.1-Forge-10.6.5.jar             |Snow! Real Magic!             |snowrealmagic                 |10.6.5              |SIDED_SETU|Manifest: NOSIGNATURE
+		swampier_swamps-1.20-4.0.0.jar                    |Swampier Swamps               |swampier_swamps               |1.20-4.0.0          |SIDED_SETU|Manifest: NOSIGNATURE
+		YungsBetterNetherFortresses-1.20-Forge-2.0.6.jar  |YUNG's Better Nether Fortresse|betterfortresses              |1.20-Forge-2.0.6    |SIDED_SETU|Manifest: NOSIGNATURE
+		spelunkers_charm-3.6.0-1.20.1.jar                 |Spelunker's Charm             |spelunkers_charm              |3.6.0               |SIDED_SETU|Manifest: NOSIGNATURE
+		twilightforest-1.20.1-4.3.2508-universal.jar      |The Twilight Forest           |twilightforest                |4.3.2508            |SIDED_SETU|Manifest: NOSIGNATURE
+		enemyexpansion-2.3.1-forge-1.20.1.jar             |Enemy Expansion               |enemyexpansion                |2.3.1               |SIDED_SETU|Manifest: NOSIGNATURE
+		FarmersDelight-1.20.1-1.2.9.jar                   |Farmer's Delight              |farmersdelight                |1.20.1-1.2.9        |SIDED_SETU|Manifest: NOSIGNATURE
+		useful_backpacks-forge-1.20.1-2.0.1.124.jar       |Useful Backpacks              |usefulbackpacks               |2.0.1.124           |SIDED_SETU|Manifest: f4:a6:0b:ee:cb:8a:1a:ea:9f:9d:45:91:8f:8b:b3:ae:26:f3:bf:05:86:1d:90:9e:f6:32:2a:1a:ed:1d:ce:b0
+		handcrafted-forge-1.20.1-3.0.6.jar                |Handcrafted                   |handcrafted                   |3.0.6               |SIDED_SETU|Manifest: NOSIGNATURE
+		Explorify v1.6.4 f15-88.mod.jar                   |Explorify                     |explorify                     |1.6.4               |SIDED_SETU|Manifest: NOSIGNATURE
+		valhelsia_structures-forge-1.20.1-1.1.2.jar       |Valhelsia Structures          |valhelsia_structures          |1.20.1-1.1.2        |SIDED_SETU|Manifest: NOSIGNATURE
+		clockwork-forge-1.20.1-1.0.2.jar                  |Clockwork                     |clockwork                     |1.0.2               |SIDED_SETU|Manifest: NOSIGNATURE
+		Ophidiophobia-forge-1.20.1-1.0.jar                |Ophidiophobia                 |ophidiophobia                 |1.0.0               |SIDED_SETU|Manifest: NOSIGNATURE
+		Wild_Lands_1.0.8-1.20.1.jar                       |Wild Lands                    |wildlands                     |1.0.8               |SIDED_SETU|Manifest: NOSIGNATURE
+		sleep_tight-1.20-1.4.7.jar                        |Sleep Tight                   |sleep_tight                   |1.20-1.4.7          |SIDED_SETU|Manifest: NOSIGNATURE
+		supermartijn642corelib-1.1.18-forge-mc1.20.1.jar  |SuperMartijn642's Core Lib    |supermartijn642corelib        |1.1.18              |SIDED_SETU|Manifest: NOSIGNATURE
+		resourcefulconfig-forge-1.20.1-2.1.3.jar          |Resourcefulconfig             |resourcefulconfig             |2.1.3               |SIDED_SETU|Manifest: NOSIGNATURE
+		lionfishapi-2.4-Fix.jar                           |LionfishAPI                   |lionfishapi                   |2.4-Fix             |SIDED_SETU|Manifest: NOSIGNATURE
+		ManyIdeasCore-1.20.1-1.4.2.jar                    |ManyIdeas Core                |manyideas_core                |1.4.2               |SIDED_SETU|Manifest: NOSIGNATURE
+		curios-forge-5.14.1+1.20.1.jar                    |Curios API                    |curios                        |5.14.1+1.20.1       |SIDED_SETU|Manifest: NOSIGNATURE
+		camera-forge-1.20.1-1.0.20.jar                    |Camera Mod                    |camera                        |1.20.1-1.0.20       |SIDED_SETU|Manifest: NOSIGNATURE
+		dungeons-and-taverns-3.0.3.f[Forge].jar           |Dungeons and Taverns          |mr_dungeons_andtaverns        |3.0.3.f             |SIDED_SETU|Manifest: NOSIGNATURE
+		ApothicAttributes-1.20.1-1.3.7.jar                |Apothic Attributes            |attributeslib                 |1.3.7               |SIDED_SETU|Manifest: NOSIGNATURE
+		tombstone-1.20.1-9.0.9.jar                        |Corail Tombstone              |tombstone                     |9.0.9               |SIDED_SETU|Manifest: NOSIGNATURE
+		rootoffear-1.20.1-1.0.10.jar                      |The Root of Fear              |rootoffear                    |1.0.10              |SIDED_SETU|Manifest: NOSIGNATURE
+		resourcefullib-forge-1.20.1-2.1.29.jar            |Resourceful Lib               |resourcefullib                |2.1.29              |SIDED_SETU|Manifest: NOSIGNATURE
+		Atlas Lib-1.20.1-1.1.12.jar                       |Atlas Lib                     |atlaslib                      |1.1.12              |SIDED_SETU|Manifest: NOSIGNATURE
+		antlers-1.0.0.jar                                 |Antlers                       |antlers                       |1.0.0               |SIDED_SETU|Manifest: NOSIGNATURE
+		deeperdarker-forge-1.20.1-1.3.3.jar               |Deeper and Darker             |deeperdarker                  |1.3.3               |SIDED_SETU|Manifest: NOSIGNATURE
+		architectury-9.2.14-forge.jar                     |Architectury                  |architectury                  |9.2.14              |SIDED_SETU|Manifest: NOSIGNATURE
+		letsdo-API-forge-1.2.15-forge.jar                 |[Let's Do] API                |doapi                         |1.2.15              |SIDED_SETU|Manifest: NOSIGNATURE
+		letsdo-bakery-forge-1.1.15.jar                    |[Let's Do] Bakery             |bakery                        |1.1.15              |SIDED_SETU|Manifest: NOSIGNATURE
+		cupboard-1.20.1-2.7.jar                           |Cupboard utilities            |cupboard                      |1.20.1-2.7          |SIDED_SETU|Manifest: NOSIGNATURE
+		trashcans-1.0.18b-forge-mc1.20.jar                |Trash Cans                    |trashcans                     |1.0.18b             |SIDED_SETU|Manifest: NOSIGNATURE
+		chickensshed-forge-1.6.0+mc1.20.1.jar             |ChickensShed                  |chickensshed                  |1.6.0+mc1.20.1      |SIDED_SETU|Manifest: NOSIGNATURE
+		PlayerRevive_FORGE_v2.0.31_mc1.20.1.jar           |PlayerRevive                  |playerrevive                  |2.0.31              |SIDED_SETU|Manifest: NOSIGNATURE
+		YungsBetterJungleTemples-1.20-Forge-2.0.5.jar     |YUNG's Better Jungle Temples  |betterjungletemples           |1.20-Forge-2.0.5    |SIDED_SETU|Manifest: NOSIGNATURE
+		Kiwi-1.20.1-Forge-11.10.0.jar                     |Kiwi Library                  |kiwi                          |11.10.0+forge       |SIDED_SETU|Manifest: NOSIGNATURE
+		MutantMonsters-v8.0.8-1.20.1-Forge.jar            |Mutant Monsters               |mutantmonsters                |8.0.8               |SIDED_SETU|Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		rechiseled-1.1.6-forge-mc1.20.jar                 |Rechiseled                    |rechiseled                    |1.1.6               |SIDED_SETU|Manifest: NOSIGNATURE
+		Thalassophobia-forge-1.20.1-1.7.1.jar             |Thalassophobia                |thalassophobia                |1.0.0               |SIDED_SETU|Manifest: NOSIGNATURE
+		jei-1.20.1-forge-15.20.0.128.jar                  |Just Enough Items             |jei                           |15.20.0.128         |SIDED_SETU|Manifest: NOSIGNATURE
+		lithostitched-forge-1.20.1-1.4.11.jar             |Lithostitched                 |lithostitched                 |1.4.11              |SIDED_SETU|Manifest: NOSIGNATURE
+		The_Graveyard_3.1_(FORGE)_for_1.20.1.jar          |The Graveyard                 |graveyard                     |3.1                 |SIDED_SETU|Manifest: NOSIGNATURE
+		libraryferret-forge-1.20.1-4.0.0.jar              |Library ferret                |libraryferret                 |4.0.0               |SIDED_SETU|Manifest: NOSIGNATURE
+		obscure_api-18.jar                                |Obscure API                   |obscure_api                   |18                  |SIDED_SETU|Manifest: NOSIGNATURE
+		immersive_weathering-1.20.1-2.0.5-forge.jar       |Immersive Weathering          |immersive_weathering          |1.20.1-2.0.5        |SIDED_SETU|Manifest: NOSIGNATURE
+		fabric-renderer-indigo-1.5.3+b5b2da4177.jar       |Fabric Renderer - Indigo      |fabric_renderer_indigo        |1.5.3+b5b2da4177    |SIDED_SETU|Manifest: NOSIGNATURE
+		EpheroLib-1.20.1-FORGE-1.2.0.jar                  |BOZOID                        |epherolib                     |0.1.2               |SIDED_SETU|Manifest: NOSIGNATURE
+		lukis-grand-capitals-1.1.2.jar                    |Luki's Grand Capitals         |mr_lukis_grandcapitals        |1.1.2               |SIDED_SETU|Manifest: NOSIGNATURE
+		knightlib-forge-1.20.1-1.4.3.jar                  |Knight Lib                    |knightlib                     |1.4.3               |SIDED_SETU|Manifest: NOSIGNATURE
+		GlitchCore-forge-1.20.1-0.0.1.1.jar               |GlitchCore                    |glitchcore                    |0.0.1.1             |SIDED_SETU|Manifest: NOSIGNATURE
+		snowundertrees-1.20.1-1.4.12.jar                  |Snow Under Trees              |snowundertrees                |1.4.12              |SIDED_SETU|Manifest: NOSIGNATURE
+		midnightlib-1.4.2-forge.jar                       |MidnightLib                   |midnightlib                   |1.4.2               |SIDED_SETU|Manifest: NOSIGNATURE
+		YungsBetterDesertTemples-1.20-Forge-3.0.3.jar     |YUNG's Better Desert Temples  |betterdeserttemples           |1.20-Forge-3.0.3    |SIDED_SETU|Manifest: NOSIGNATURE
+		wegotrunnners-0.7.1.1.20.1[SPANISH TRANSLATION UPD|wegotrunnners                 |wegotrunnners                 |1.0.0               |SIDED_SETU|Manifest: NOSIGNATURE
+		Terralith_1.20.x_v2.5.4.jar                       |Terralith                     |terralith                     |2.5.4               |SIDED_SETU|Manifest: NOSIGNATURE
+		fusion-1.2.11c-forge-mc1.20.1.jar                 |Fusion                        |fusion                        |1.2.11+c            |SIDED_SETU|Manifest: NOSIGNATURE
+		blueprint-1.20.1-7.1.3.jar                        |Blueprint                     |blueprint                     |7.1.3               |SIDED_SETU|Manifest: NOSIGNATURE
+		azurelib-neo-1.20.1-3.0.27.jar                    |AzureLib                      |azurelib                      |3.0.27              |SIDED_SETU|Manifest: NOSIGNATURE
+		memoryleakfix-forge-1.17+-1.1.5.jar               |Memory Leak Fix               |memoryleakfix                 |1.1.5               |SIDED_SETU|Manifest: NOSIGNATURE
+		puzzlesaccessapi-forge-20.1.1.jar                 |Puzzles Access Api            |puzzlesaccessapi              |20.1.1              |SIDED_SETU|Manifest: NOSIGNATURE
+		forge-1.20.1-47.3.7-universal.jar                 |Forge                         |forge                         |47.3.7              |SIDED_SETU|Manifest: 84:ce:76:e8:45:35:e4:0e:63:86:df:47:59:80:0f:67:6c:c1:5f:6e:5f:4d:b3:54:47:1a:9f:7f:ed:5e:f2:90
+		ironchest-1.20.1-14.4.4.jar                       |Iron Chests                   |ironchest                     |1.20.1-14.4.4       |SIDED_SETU|Manifest: NOSIGNATURE
+		tectonic-3.0.17-forge-1.20.1.jar                  |Tectonic                      |tectonic                      |3.0.17              |SIDED_SETU|Manifest: NOSIGNATURE
+		server-1.20.1-20230612.114412-srg.jar             |Minecraft                     |minecraft                     |1.20.1              |SIDED_SETU|Manifest: NOSIGNATURE
+		benssharks-1.2.7.1-forge-1.20.1.jar               |Ben's Sharks                  |benssharks                    |1.2.7.1             |SIDED_SETU|Manifest: NOSIGNATURE
+		horror_element_mod-1.6.2-forge-1.20.1.jar         |Horror Element Mod            |horror_element_mod            |1.6.2               |SIDED_SETU|Manifest: NOSIGNATURE
+		the_ravenous-2.0.4-forge-1.20.1.jar               |The Ravenous                  |the_ravenous                  |1.0.0               |SIDED_SETU|Manifest: NOSIGNATURE
+		bossesrise-1.20.1-forge-1.0.9.2b.jar              |Bosses'Rises                  |block_factorys_bosses         |1.0.9.2.            |SIDED_SETU|Manifest: NOSIGNATURE
+		born_in_chaos_[Forge]1.20.1_1.7.4.jar             |Born in Chaos                 |born_in_chaos_v1              |1.7.3               |SIDED_SETU|Manifest: NOSIGNATURE
+		Critters n' Crawlers-2.2.5-mc1.20.1.jar           |Critters n' Crawlers          |cnc                           |2.2.5               |SIDED_SETU|Manifest: NOSIGNATURE
+		iglib-1.0.5-forge-1.20.1.jar                      |Iguana Lib                    |iglib                         |1.0.5               |SIDED_SETU|Manifest: NOSIGNATURE
+		fels_mgr-1.0.1f-forge-1.20.1.jar                  |Fel's Machine Guns Remastered |fels_mgr                      |1.0.1               |SIDED_SETU|Manifest: NOSIGNATURE
+		from_the_caves-0.6.901-forge-1.20.1.jar           |From The Caves                |from_the_caves                |0.6.901             |SIDED_SETU|Manifest: NOSIGNATURE
+		RealisticTorches-1.20.1-3.2.0.jar                 |Realistic Torches             |realistictorches              |1.20.1-3.2.0        |SIDED_SETU|Manifest: NOSIGNATURE
+		THEUNDEADREVAMPED_1.9M_1.20.1.jar                 |Undead_revamp2                |undead_revamp2                |1.0.1               |SIDED_SETU|Manifest: NOSIGNATURE
+		TConstruct-1.20.1-3.11.0.148.jar                  |Tinkers' Construct            |tconstruct                    |3.11.0.148          |SIDED_SETU|Manifest: NOSIGNATURE
+		Tinkers-Thinking-0.1.6.5.jar                      |Tinkers' Thinking             |tinkers_thinking              |0.1.6.5             |ERROR     |Manifest: NOSIGNATURE
+		tinkersjewelry-1.2.0.jar                          |Tinkers' Jewelry              |tinkersjewelry                |1.2.0               |SIDED_SETU|Manifest: NOSIGNATURE
+		sons-of-sins-1.20.1-2.1.10.jar                    |Sons of Sins                  |sons_of_sins                  |2.1.10              |SIDED_SETU|Manifest: NOSIGNATURE
+		alexscaves-2.0.2.jar                              |Alex's Caves                  |alexscaves                    |2.0.2               |SIDED_SETU|Manifest: NOSIGNATURE
+		voicechat-forge-1.20.1-2.6.10.jar                 |Simple Voice Chat             |voicechat                     |1.20.1-2.6.10       |SIDED_SETU|Manifest: NOSIGNATURE
+		sound-physics-remastered-forge-1.20.1-1.5.1.jar   |Sound Physics Remastered      |sound_physics_remastered      |1.20.1-1.5.1        |SIDED_SETU|Manifest: NOSIGNATURE
+		Steam_Rails-1.6.14-beta+forge-mc1.20.1.jar        |Create: Steam 'n' Rails       |railways                      |1.6.14-beta+forge-mc|SIDED_SETU|Manifest: NOSIGNATURE
+		TerraBlender-forge-1.20.1-3.0.1.10.jar            |TerraBlender                  |terrablender                  |3.0.1.10            |SIDED_SETU|Manifest: NOSIGNATURE
+		BiomesOPlenty-forge-1.20.1-19.0.0.96.jar          |Biomes O' Plenty              |biomesoplenty                 |19.0.0.96           |SIDED_SETU|Manifest: NOSIGNATURE
+		moonlight-1.20-2.16.16-forge.jar                  |Moonlight Library             |moonlight                     |1.20-2.16.16        |SIDED_SETU|Manifest: NOSIGNATURE
+		fabric-api-base-0.4.32+ef105b4977.jar             |Fabric API Base               |fabric_api_base               |0.4.32+ef105b4977   |SIDED_SETU|Manifest: NOSIGNATURE
+		RegionsUnexploredForge-0.5.6+1.20.1.jar           |Regions Unexplored            |regions_unexplored            |0.5.6               |SIDED_SETU|Manifest: NOSIGNATURE
+		mixinsquared-forge-0.1.1.jar                      |MixinSquared                  |mixinsquared                  |0.1.1               |SIDED_SETU|Manifest: NOSIGNATURE
+		croptopiadelight-1.3.2.jar                        |Croptopia Delight             |croptopiadelight              |1.3.2               |SIDED_SETU|Manifest: NOSIGNATURE
+		CreativeCore_FORGE_v2.12.32_mc1.20.1.jar          |CreativeCore                  |creativecore                  |2.12.32             |SIDED_SETU|Manifest: NOSIGNATURE
+		spectrelib-forge-0.13.17+1.20.1.jar               |SpectreLib                    |spectrelib                    |0.13.17+1.20.1      |SIDED_SETU|Manifest: NOSIGNATURE
+		walkietalkie-forge-1.20.1-1.3.0.jar               |Walkie-Talkie                 |walkietalkie                  |1.3.0               |SIDED_SETU|Manifest: NOSIGNATURE
+		RecipesLibrary-1.20.1-2.0.1.jar                   |Recipes Library               |recipes_lib                   |2.0.1               |SIDED_SETU|Manifest: NOSIGNATURE
+		flywheel-forge-1.20.1-1.0.5.jar                   |Flywheel                      |flywheel                      |1.0.5               |SIDED_SETU|Manifest: NOSIGNATURE
+		Ponder-Forge-1.20.1-1.0.91.jar                    |Ponder                        |ponder                        |1.0.91              |SIDED_SETU|Manifest: NOSIGNATURE
+		create-1.20.1-6.0.8.jar                           |Create                        |create                        |6.0.8               |SIDED_SETU|Manifest: NOSIGNATURE
+		Mantle-1.20.1-1.11.95.jar                         |Mantle                        |mantle                        |1.11.95             |SIDED_SETU|Manifest: NOSIGNATURE
+		ecologics-forge-1.20.1-2.2.2.jar                  |Ecologics                     |ecologics                     |2.2.2               |SIDED_SETU|Manifest: NOSIGNATURE
+		Xaeros_Minimap_25.2.10_Forge_1.20.jar             |Xaero's Minimap               |xaerominimap                  |25.2.10             |SIDED_SETU|Manifest: NOSIGNATURE
+		Croptopia-1.20.1-FORGE-3.0.4.jar                  |Croptopia                     |croptopia                     |3.0.4               |SIDED_SETU|Manifest: NOSIGNATURE
+		polymorph-forge-0.49.10+1.20.1.jar                |Polymorph                     |polymorph                     |0.49.10+1.20.1      |SIDED_SETU|Manifest: NOSIGNATURE
+		Zeta-1.0-31 (1).jar                               |Zeta                          |zeta                          |1.0-31              |SIDED_SETU|Manifest: NOSIGNATURE
+		Quark-4.0-462 (1).jar                             |Quark                         |quark                         |4.0-462             |SIDED_SETU|Manifest: NOSIGNATURE
+		supplementaries-1.20-3.1.41.jar                   |Supplementaries               |supplementaries               |1.20-3.1.41         |SIDED_SETU|Manifest: NOSIGNATURE
+		labellingcontainers-1.8.2.jar                     |Labelling Containers          |labellingcontainers           |1.8.2               |SIDED_SETU|Manifest: NOSIGNATURE
+		ToughAsNails-forge-1.20.1-9.2.0.171.jar           |Tough As Nails                |toughasnails                  |9.2.0.171           |SIDED_SETU|Manifest: NOSIGNATURE
+		crittersandcompanions-forge-1.20.1-2.3.5.jar      |Critters and Companions       |crittersandcompanions         |1.20.1-2.3.5        |SIDED_SETU|Manifest: NOSIGNATURE
+		canary-mc1.20.1-0.3.3.jar                         |Canary                        |canary                        |0.3.3               |SIDED_SETU|Manifest: NOSIGNATURE
+		ManyIdeasDoors-1.20.1-1.2.3.jar                   |ManyIdeas Doors               |manyideas_doors               |1.2.3               |SIDED_SETU|Manifest: NOSIGNATURE
+		BetterArachnophobia-forge-1.20.1-1.1.jar          |Arachnophobia                 |arachnophobia                 |1.0.0               |SIDED_SETU|Manifest: NOSIGNATURE
+		coroutil-forge-1.20.1-1.3.7.jar                   |CoroUtil                      |coroutil                      |1.20.1-1.3.7        |SIDED_SETU|Manifest: NOSIGNATURE
+		creeperoverhaul-3.0.2-forge.jar                   |Creeper Overhaul              |creeperoverhaul               |3.0.2               |SIDED_SETU|Manifest: NOSIGNATURE
+		ferritecore-6.0.1-forge.jar                       |Ferrite Core                  |ferritecore                   |6.0.1               |SIDED_SETU|Manifest: 41:ce:50:66:d1:a0:05:ce:a1:0e:02:85:9b:46:64:e0:bf:2e:cf:60:30:9a:fe:0c:27:e0:63:66:9a:84:ce:8a
+		connectedglass-1.1.14-forge-mc1.20.1.jar          |Connected Glass               |connectedglass                |1.1.14              |SIDED_SETU|Manifest: NOSIGNATURE
+		PuzzlesLib-v8.1.33-1.20.1-Forge.jar               |Puzzles Lib                   |puzzleslib                    |8.1.33              |SIDED_SETU|Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		Enhanced-Celestials-forge-1.20.1-5.0.3.1.jar      |Enhanced Celestials           |enhancedcelestials            |1.20.1-5.0.3.1      |SIDED_SETU|Manifest: NOSIGNATURE
+		Data_Anchor-forge-1.20.1-1.0.0.20.jar             |Data Anchor                   |dataanchor                    |1.0.0.20            |SIDED_SETU|Manifest: NOSIGNATURE
+		Corgilib-Forge-1.20.1-4.0.3.4.jar                 |CorgiLib                      |corgilib                      |4.0.3.4             |SIDED_SETU|Manifest: NOSIGNATURE
+		Aquaculture-1.20.1-2.5.7.jar                      |Aquaculture 2                 |aquaculture                   |2.5.7               |SIDED_SETU|Manifest: NOSIGNATURE
+		TCIntegrations-1.20.1-2.0.25.17.jar               |TCIntegrations                |tcintegrations                |2.0.25.17           |SIDED_SETU|Manifest: NOSIGNATURE
+		eh1.3.1-1.20.1.jar                                |Horde Hoard                   |horde_hoard                   |1.1.0               |SIDED_SETU|Manifest: NOSIGNATURE
+		Delightful-1.20.1-3.7.6.jar                       |Delightful                    |delightful                    |3.7.6               |SIDED_SETU|Manifest: NOSIGNATURE
+		valhelsia_core-forge-1.20.1-1.1.2.jar             |Valhelsia Core                |valhelsia_core                |1.1.2               |SIDED_SETU|Manifest: NOSIGNATURE
+		aquamirae-forge-1.20.1-6.1.2.jar                  |Aquamirae                     |aquamirae                     |6.1.2               |SIDED_SETU|Manifest: NOSIGNATURE
+	Crash Report UUID: 20a2a3cd-b03f-4229-8bba-2a9cf6028a41
+	FML: 47.3
+	Forge: net.minecraftforge:47.3.7
+	Kiwi Modules: 
+		kiwi:contributors
+		kiwi:data
+		snowrealmagic:core
